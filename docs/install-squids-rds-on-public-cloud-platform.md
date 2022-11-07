@@ -26,11 +26,11 @@
 
 ### 执行安装命令
 
-**<font color=#FF000 >注意: 无论是单机版本还是高可用版本，仅一台节点执行安装脚本即可</font>**
+**注意: 无论是单机版本还是高可用版本，仅一台节点执行安装脚本即可**
 
 1. 进入 `/opt/squids/instller` 目录，执行安装脚本。请根据提示，依次输入节点信息以及发件邮箱等必要信息。
 
-   ![img.png](../static/img/bash-install.png)
+   ![img.png](./img/bash-install.png)
 
 * 其中单机模式loadbalancer提供为当前云主机的公网IP即可。
 
@@ -38,21 +38,21 @@
 
 * 云主机节点的unreachable及failed结果都是0则安装过程正常。
 
-  ![img.png](../static/img/install-finished.png)
+  ![img.png](./img/install-finished.png)
 
-* 如果安装过程中出现报错，首先检查输入IP信息是否正确，如不正确可进入 `/opt/squids/instller` 文件夹，修改为正确IP地址后，再次执行安装脚本。 若IP地址经检查正确无误，请联系 [在线客服]() 进行处理。
+* 如果安装过程中出现报错，首先检查输入IP信息是否正确，如不正确可进入 `/opt/squids/instller` 文件夹，修改为正确IP地址后，再次执行安装脚本。 若IP地址经检查正确无误，请联系 [在线客服](#) 进行处理。
 
 ### 安装结果检查
 
 1. 执行 `kubectl get pod -A | grep -Ev 'Running|Completed'`查看集群pod状态是否就绪，若安装正常，大约5min左右所有pod状态即可为Running或Completed状态。可使用该命令检查是否仍存在异常pod状态。
 
-   ![img.png](../static/img/pod-check.png)
+   ![img.png](./img/pod-check.png)
 
    安装成功之后即可正常登陆平台，具体操作可参考 [申请授权](apply-for-authorization.md) 进行功能使用。
-2. 如果10分钟以上仍有非Running/非Completed的状态，请联系 [在线客服]() 进行处理。
+2. 如果10分钟以上仍有非Running/非Completed的状态，请联系 [在线客服](#) 进行处理。
 3. 常见异常状态参考：
     * Pending          : 调度失败，资源不足，或者节点存在Pod不能容忍的污点
     * Terminating      : 磁盘空间不足，Dockerd与containerd状态不同步
     * CrashLoopBackOff : Pod反复拉起后退出登陆，一般是系统配置问题，比如内存资源不足，系统OOM，cgroup OOM
     * OOMKilled        : 节点内存不足或启动内存有限制
-    * Evicted          : 磁盘空间不足                                           
+    * Evicted          : 磁盘空间不足
