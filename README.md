@@ -9,21 +9,23 @@ Squids 文档中心，包含产品文档与产品博客
 
 ### 环境依赖
 
-- nvm，版本大于等于 0.37
-- Node.js，版本大于等于 16
-- pnpm，版本大于等于 7.14
+- [Node.js](https://nodejs.org/en/)，版本大于等于 16
+
+补充
+
+- 为了便于在本机安装多个版本的 Node.js，可以安装工具 [nvm](https://github.com/nvm-sh/nvm)（注意：win 系统好像无法安装）
+- 为了节省本地磁盘空间，可以安装工具 [pnpm](https://pnpm.io/)
 
 ### 安装项目依赖
 
 ```
-$ nvm use
-$ pnpm install
+$ npm install
 ```
 
 ### 本地开发
 
 ```
-$ pnpm start
+$ npm start
 ```
 
 在浏览器打开 `http://localhost:3000` 地址预览查看
@@ -31,7 +33,7 @@ $ pnpm start
 ### 本地编译
 
 ```
-$ pnpm build
+$ npm build
 ```
 
 生成 `build` 目录，可以部署到远端服务器
