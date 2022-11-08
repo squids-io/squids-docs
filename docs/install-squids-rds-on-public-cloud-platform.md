@@ -10,15 +10,22 @@
 
 * 您可以按照不同云平台的官方文档进行Squids镜像的导入和使用。
     * [阿里云导入自定义镜像](https://help.aliyun.com/document_detail/25464.html)
+        * 阿里云导入镜像后的镜像检测可能存在建议优化项，不影响正常使用，阿里云助手等工具可以在启动云主机后进行安装。
     * [华为云导入自定义镜像](https://support.huaweicloud.com/usermanual-ims/zh-cn_topic_0030713191.html)
     * [腾讯云导入自定义镜像](https://cloud.tencent.com/document/product/213/4945)
+        * 腾讯云导入方式选择**强制**导入
 
 ## 安装部署
 
-### 环境要求
+### 环境配置要求
 
 * [单Master环境要求](single-master-requirement.md)
 * [高可用Master环境要求](highly-available-cluster-requirement.md)
+
+### 创建云主机
+
+* 阿里云：按照云平台提示以及配置要求正常安装即可，建议自定义root密码。
+* 腾讯云、华为云：登录方式保留镜像设置，在云主机启动之后通过 `passwd` 命令或云平台管控页面进行密码重置。
 
 ### 连接云主机
 
